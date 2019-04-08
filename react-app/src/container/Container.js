@@ -5,6 +5,9 @@ import "./Container.css"
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
 import NavBar from "../components/NavBar/NavBar"
 import Home from "../components/Home/Home"
+import ProductList from "../components/ProductList/ProductList"
+import EditProduct from "../components/EditProduct/EditProduct"
+import CreateProduct from "../components/CreateProduct/CreateProduct"
 
 class Container extends React.Component {
   constructor(props) {
@@ -12,6 +15,9 @@ class Container extends React.Component {
     this.state = {}
   }
   render() {
+    console.log("CONTAINER PAGE PROPS:", this.props)
+    console.log("CONTAINER PAGE STATE:", this.state)
+
     return (
       <div className="containerPage">
         <h1>PPM - Project Product Management</h1>
@@ -21,6 +27,9 @@ class Container extends React.Component {
             <Switch>
               <Route exact path="/" render={() => <Redirect to="/home" />} />
               <Route path="/home" component={Home} />
+              <Route path="/products/edit/:id" render={(props) => <EditProduct {...props} />} />
+              <Route path="/products/new" component={CreateProduct} />
+              <Route path="/products" component={ProductList} />
             </Switch>
           </div>
         </BrowserRouter>

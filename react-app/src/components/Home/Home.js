@@ -3,7 +3,7 @@ import "./Home.css"
 
 const Home = (props) => {
   return (
-    <div className="homePage">
+    <div className="homePageContainer">
       <h1>Home Page</h1>
       <p>
         Welcome to the Project Product Management. Here we can manage a <br />

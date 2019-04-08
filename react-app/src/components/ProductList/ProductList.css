@@ -1,0 +1,16 @@
+.productsListContainer li {
+  list-style: none;
+  display: inline-block;
+  padding: 20px;
+}
+
+.productsListContainer img {
+  height: 150px;
+  width: 200px;
+}
+
+.productsListContainer button {
+  height: 30px;
+  width: 200px;
+  margin-bottom: 5px;
+}
