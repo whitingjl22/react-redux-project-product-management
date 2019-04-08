@@ -1,0 +1,12 @@
+.containerPage h1 {
+  margin-left: 20px;
+}
+
+.contentContainer {
+  border-style: solid;
+  /* width: 900px; */
+  width: 1390px;
+  margin: 20px;
+  min-height: 550px;
+  background: lightgray;
+}
