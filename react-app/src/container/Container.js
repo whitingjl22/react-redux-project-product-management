@@ -1,8 +1,9 @@
 import React from "react"
-import { connect } from "react-redux"
-import "./Container.css"
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
+import { connect } from "react-redux"
+
+import "./Container.css"
 import NavBar from "../components/NavBar/NavBar"
 import Home from "../components/Home/Home"
 import ProductList from "../components/ProductList/ProductList"

@@ -8,6 +8,10 @@ export const deleteProduct = (id) => ({
   type: "DELETE_PRODUCT",
   id
 })
+export const createProduct = (newProduct) => ({
+  type: "CREATE_PRODUCT",
+  newProduct
+})
 
 ///REDUCERS
 export const reducers = (state = initialState, action) => {
@@ -26,6 +30,23 @@ export const reducers = (state = initialState, action) => {
       return {
         ...state,
         products: [...state.products.slice(0, deleteIndex), ...state.products.slice(deleteIndex + 1)]
+      }
+
+    case "CREATE_PRODUCT":
+      console.log(" -- REDUCER -- CREATE_PRODUCT | state: ", state)
+      console.log(" -- REDUCER -- CREATE_PRODUCT | action", action)
+      id++
+      return {
+        ...state,
+        products: [
+          ...state.products,
+          {
+            id,
+            title: action.newProduct.title,
+            price: action.newProduct.price,
+            image: action.newProduct.image
+          }
+        ]
       }
 
     default:
