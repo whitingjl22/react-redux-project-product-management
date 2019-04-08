@@ -36,6 +36,7 @@ export const reducers = (state = initialState, action) => {
       console.log(" -- REDUCER -- CREATE_PRODUCT | state: ", state)
       console.log(" -- REDUCER -- CREATE_PRODUCT | action", action)
       id++
+      console.log(" -- REDUCER -- CREATE_PRODUCT | id ", id)
       return {
         ...state,
         products: [
@@ -59,91 +60,91 @@ let id = 15
 const initialState = {
   products: [
     {
-      id: "1",
+      id: 1,
       title: "title 1",
       price: 62,
       image: "http://lorempixel.com/640/480/city"
     },
     {
-      id: "2",
+      id: 2,
       title: "title 2",
       price: 77,
       image: "http://lorempixel.com/640/480/business"
     },
     {
-      id: "3",
+      id: 3,
       title: "title 3",
       price: 32,
       image: "http://lorempixel.com/640/480/animals"
     },
     {
-      id: "4",
+      id: 4,
       title: "title 4",
       price: 56,
       image: "http://lorempixel.com/640/480/abstract"
     },
     {
-      id: "5",
+      id: 5,
       title: "title 5",
       price: 3,
       image: "http://lorempixel.com/640/480/business"
     },
     {
-      id: "6",
+      id: 6,
       title: "title 6",
       price: "8",
       image: "http://lorempixel.com/640/480/city"
     },
     {
-      id: "7",
+      id: 7,
       title: "title 7",
       price: 48,
       image: "http://lorempixel.com/640/480/transport"
     },
     {
-      id: "8",
+      id: 8,
       title: "title 8",
       price: 58,
       image: "http://lorempixel.com/640/480/nature"
     },
     {
-      id: "9",
+      id: 9,
       title: "title 9",
       price: 98,
       image: "http://lorempixel.com/640/480/technics"
     },
     {
-      id: "10",
+      id: 10,
       title: "title 10",
       price: 80,
       image: "http://lorempixel.com/640/480/technics"
     },
     {
-      id: "11",
+      id: 11,
       title: "title 11",
       price: 33,
       image: "http://lorempixel.com/640/480/technics"
     },
     {
-      id: "12",
+      id: 12,
       title: "title 12",
       price: 90,
       image: "http://lorempixel.com/640/480/fashion"
     },
     {
-      id: "13",
+      id: 13,
       title: "title 13",
       price: 49,
       image: "http://lorempixel.com/640/480/animals"
     },
     {
-      id: "14",
+      id: 14,
       title: "title 14",
       price: 27,
       image: "http://lorempixel.com/640/480/animals"
     },
     {
-      id: "15",
+      id: 15,
       title: "title 15",
       price: 24,
       image: "http://lorempixel.com/640/480/nature"
