@@ -1,7 +1,7 @@
 import React from "react"
 
 import { connect } from "react-redux"
-import {} from "../../redux"
+import { updateProduct, deleteProduct } from "../../redux"
 import { Redirect } from "react-router-dom"
 
 class EditProduct extends React.Component {
@@ -21,10 +21,6 @@ class EditProduct extends React.Component {
     let title = ""
     let price = ""
     let image = ""
-    // console.log(this.props.products[14].id)
-    // console.log(this.props.match.params.id)
-    // console.log(this.props.products[14].id === this.props.match.params.id)
-    // console.log(this.props.products[14].id == this.props.match.params.id)
 
     for (let i = 0; i < this.props.products.length; i++) {
       if (parseInt(this.props.match.params.id) === this.props.products[i].id) {
@@ -55,13 +51,21 @@ class EditProduct extends React.Component {
     })
   }
 
-  // handleSubmit = (e) => {
-  // 	e.preventDefault()
+  handleSubmit = (e) => {
+    e.preventDefault()
+  }
 
-  // 	this.setState({
-  // 		toProductList: true
-  // 	})
-  // }
+  handleUpdateButton = () => {
+    this.props.reviseProduct(parseInt(this.props.match.params.id), {
+      title: this.state.title,
+      price: this.state.price,
+      image: this.state.image
+    })
+
+    this.setState({
+      toProductList: true
+    })
+  }
 
   render() {
     if (this.state.toProductList) {
@@ -98,7 +102,7 @@ class EditProduct extends React.Component {
             type="submit"
             value="Update"
             disabled={!this.state.titleValid || !this.state.priceValid}
-            onClick={this.updateProduct}
+            onClick={this.handleUpdateButton}
           />
         </form>
       </div>
@@ -110,7 +114,10 @@ const mapStateToProps = (state) => ({
   products: state.products
 })
 
-const mapDispatchToProps = (dispatch) => ({})
+const mapDispatchToProps = (dispatch) => ({
+  reviseProduct: (id, updatedProduct) => dispatch(updateProduct(id, updatedProduct)),
+  destroyProduct: (id) => dispatch(deleteProduct(id))
+})
 
 export default connect(
   mapStateToProps,

@@ -12,6 +12,11 @@ export const createProduct = (newProduct) => ({
   type: "CREATE_PRODUCT",
   newProduct
 })
+export const updateProduct = (id, updatedProduct) => ({
+  type: "UPDATE_PRODUCT",
+  id,
+  updatedProduct
+})
 
 ///REDUCERS
 export const reducers = (state = initialState, action) => {
@@ -48,6 +53,24 @@ export const reducers = (state = initialState, action) => {
             image: action.newProduct.image
           }
         ]
+      }
+
+    case "UPDATE_PRODUCT":
+      console.log(" -- REDUCER -- UPDATE_PRODUCT | state: ", state)
+      console.log(" -- REDUCER -- UPDATE_PRODUCT | action", action)
+      return {
+        ...state,
+        products: state.products.map((product) => {
+          if (product.id === action.id) {
+            return {
+              ...product,
+              title: action.updatedProduct.title,
+              price: action.updatedProduct.price,
+              image: action.updatedProduct.image
+            }
+          }
+          return product
+        })
       }
 
     default:
