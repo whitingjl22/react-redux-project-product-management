@@ -67,6 +67,14 @@ class EditProduct extends React.Component {
     })
   }
 
+  handleDeleteButton = () => {
+    this.props.removeProduct(parseInt(this.props.match.params.id))
+
+    this.setState({
+      toProductList: true
+    })
+  }
+
   render() {
     if (this.state.toProductList) {
       return <Redirect to="/products" />
@@ -97,7 +105,7 @@ class EditProduct extends React.Component {
               </tr>
             </tbody>
           </table>
-          <input type="submit" value="Delete" onClick={this.deleteProduct} />
+          <input type="submit" value="Delete" onClick={this.handleDeleteButton} />
           <input
             type="submit"
             value="Update"
@@ -116,7 +124,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   reviseProduct: (id, updatedProduct) => dispatch(updateProduct(id, updatedProduct)),
-  destroyProduct: (id) => dispatch(deleteProduct(id))
+  removeProduct: (id) => dispatch(deleteProduct(id))
 })
 
 export default connect(

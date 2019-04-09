@@ -32,7 +32,7 @@ class ProductList extends React.Component {
                 <br />
                 <button
                   onClick={() => {
-                    this.props.destroyProduct(product.id)
+                    this.props.removeProduct(product.id)
                   }}>
                   Delete
                 </button>
@@ -50,7 +50,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  destroyProduct: (id) => dispatch(deleteProduct(id))
+  removeProduct: (id) => dispatch(deleteProduct(id))
 })
 
 export default connect(
