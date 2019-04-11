@@ -105,7 +105,7 @@ class EditProduct extends React.Component {
               </tr>
             </tbody>
           </table>
-          <input type="submit" value="Delete" onClick={this.handleDeleteButton} />
+          <input type="button" value="Delete" onClick={this.handleDeleteButton} />
           <input
             type="submit"
             value="Update"
